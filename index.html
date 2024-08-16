@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PWA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="text-center p-3">
+        <h1>Cost Calculator</h1>
+    </header>
+    <main class="container mt-4">
+        <form id="costForm" class="bg-light p-4 rounded shadow-sm">
+            <!-- Dropdown for Material Cost -->
+            <div class="form-group">
+                <label for="material">Material:</label>
+                <select id="material" name="material" class="form-control">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <!-- Input for Factory Overhead -->
+            <div class="form-group">
+                <label for="factoryOverhead">Factory Overhead:</label>
+                <input type="number" id="factoryOverhead" name="factoryOverhead" class="form-control" placeholder="Enter factory overhead">
+            </div>
+
+            <!-- Input for Worker Pay -->
+            <div class="form-group">
+                <label for="workerPay">Worker Pay:</label>
+                <input type="number" id="workerPay" name="workerPay" class="form-control" placeholder="Enter worker pay">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+        </form>
+        <div id="result" class="mt-4 text-center"></div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
