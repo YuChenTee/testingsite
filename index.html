@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PWA</title>
+    <title>Cost Calculator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,30 +14,34 @@
     </header>
     <main class="container mt-4">
         <form id="costForm" class="bg-light p-4 rounded shadow-sm">
-            <!-- Dropdown for Material Cost -->
+            <!-- Input for Markup (%) -->
             <div class="form-group">
-                <label for="material">Material:</label>
-                <select id="material" name="material" class="form-control">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
+                <label for="markup">Markup (%):</label>
+                <input type="number" id="markup" name="markup" class="form-control" placeholder="Enter markup percentage">
             </div>
 
-            <!-- Input for Factory Overhead -->
+            <!-- Input for Margin (%) -->
             <div class="form-group">
-                <label for="factoryOverhead">Factory Overhead:</label>
-                <input type="number" id="factoryOverhead" name="factoryOverhead" class="form-control" placeholder="Enter factory overhead">
+                <label for="margin">Margin (%):</label>
+                <input type="number" id="margin" name="margin" class="form-control" placeholder="Enter margin percentage">
             </div>
 
-            <!-- Input for Worker Pay -->
+            <!-- Dropdown for Material Cost (RM) -->
             <div class="form-group">
-                <label for="workerPay">Worker Pay:</label>
-                <input type="number" id="workerPay" name="workerPay" class="form-control" placeholder="Enter worker pay">
+                <label for="materialCost">Material Cost (RM):</label>
+                <div>
+                    <select id="materialCost" name="materialCost" class="form-control">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+            <button type="submit" class="btn btn-primary btn-block">Calculate Selling Price</button>
         </form>
         <div id="result" class="mt-4 text-center"></div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

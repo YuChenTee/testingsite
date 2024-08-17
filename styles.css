@@ -25,9 +25,30 @@ select, input, button {
     padding: 10px;
     font-size: 1rem;
 }
+/* Ensure the parent container has relative positioning */
+.form-group {
+    position: relative;
+}
+
+/* Ensure the Select2 container takes the full width */
+.select2-container {
+    width: 100%;
+}
+
+/* Adjust the dropdown list to ensure it's positioned correctly */
+.select2-container--default .select2-results {
+    background-color: white;
+    max-height: 180px; /* Limit height of the dropdown */
+    position: absolute; /* Ensure the dropdown is positioned below */
+    overflow-y: hidden;
+    top: 100%; /* Position directly below the input */
+    left: 0; /* Align with the left edge of the input */
+    width: 100%; /* Match the width of the input */
+}
 
 @media (max-width: 600px) {
     form {
         width: 90%;
     }
 }
+
