@@ -52,14 +52,38 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("costForm").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const markup = parseFloat(document.getElementById("markup").value) / 100;
-        const margin = parseFloat(document.getElementById("margin").value) / 100;
+        const markup = parseFloat(document.getElementById("markup").value);
+        const margin = parseFloat(document.getElementById("margin").value);
         const materialCost = parseFloat(materialCostSelect.value);
 
+        let errorMessage = '';
+
+        if (isNaN(markup) || markup === 0) {
+            errorMessage += "Please enter a valid markup percentage.\n";
+        }
+        if (isNaN(margin) || margin === 0) {
+            errorMessage += "Please enter a valid margin percentage.\n";
+        }
+        if (isNaN(materialCost)) {
+            errorMessage += "Please select a material cost.\n";
+        }
+
+        if (errorMessage) {
+            alert(errorMessage.trim());
+            return;
+        }
+
+        // Convert percentage inputs to decimal
+        const markupDecimal = markup / 100;
+        const marginDecimal = margin / 100;
+
         // Calculate the selling price using the provided formula
-        const sellingPrice = (materialCost * (1 + markup)) / (1 - margin);
+        const sellingPrice = (materialCost * (1 + markupDecimal)) / (1 - marginDecimal);
 
         // Display the result
-        document.getElementById("result").textContent = `Selling Price: RM ${sellingPrice.toFixed(2)}`;
+        $('#result').html(`Selling Price: <strong>RM ${sellingPrice.toFixed(2)}</strong>`);
+        
+        // Alert the user that the result has been calculated
+        alert("Result calculated");
     });
 });

@@ -46,6 +46,12 @@ select, input, button {
     width: 100%; /* Match the width of the input */
 }
 
+/* New styles for result */
+#result {
+    font-size: 1.5rem; /* Increase font size */
+    color: #333; /* Optional: Change color for better visibility */
+}
+
 @media (max-width: 600px) {
     form {
         width: 90%;
