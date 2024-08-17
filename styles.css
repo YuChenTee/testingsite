@@ -59,16 +59,18 @@ select, input, button {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: auto; /* Adjust width to content */
-    max-width: 100%; /* Ensure it doesn't exceed screen width */
+    padding: 10px 20px; /* Add padding for better spacing */
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1050; /* Ensure it's above other content */
+    max-width: 80%; /* Set max-width to ensure it doesn't exceed screen width */
+    width: auto; /* Adjust width to fit content */
+    min-width: 150px; /* Set a minimum width to prevent it from being too small */
 }
 
 .toast-body {
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 600px) {
