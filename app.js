@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let errorMessage = '';
 
-        if (isNaN(markup) || markup === 0) {
+        if (isNaN(markup)) {
             errorMessage += "Please enter a valid markup percentage.\n";
         }
-        if (isNaN(margin) || margin === 0) {
+        if (isNaN(margin)) {
             errorMessage += "Please enter a valid margin percentage.\n";
         }
         if (isNaN(materialCost)) {
@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (errorMessage) {
-            alert(errorMessage.trim());
+            $('#modalMessage').text(errorMessage.trim());
+            $('#alertModal').modal('show');
             return;
         }
 
@@ -83,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Display the result
         $('#result').html(`Selling Price: <strong>RM ${sellingPrice.toFixed(2)}</strong>`);
         
-        // Alert the user that the result has been calculated
-        alert("Result calculated");
+        // Show a positive toast notification
+        $('.toast').toast('show'); // Use Bootstrap's toast method
     });
 });

@@ -20,6 +20,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 30%;
 }
 select, input, button {
     padding: 10px;
@@ -52,9 +53,27 @@ select, input, button {
     color: #333; /* Optional: Change color for better visibility */
 }
 
+.toast {
+    background-color: #2780e3;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: auto; /* Adjust width to content */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050; /* Ensure it's above other content */
+}
+
+.toast-body {
+    font-size: 0.8rem;
+}
+
 @media (max-width: 600px) {
     form {
-        width: 90%;
+        width: 80%;
     }
 }
 
