@@ -7,6 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow:hidden;
 }
 
 main {
@@ -14,13 +15,14 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5%;
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 30%;
+    width: 50%;
 }
 select, input, button {
     padding: 10px;
@@ -39,7 +41,7 @@ select, input, button {
 /* Adjust the dropdown list to ensure it's positioned correctly */
 .select2-container--default .select2-results {
     background-color: white;
-    max-height: 180px; /* Limit height of the dropdown */
+    max-height: 200px; /* Limit height of the dropdown */
     position: absolute; /* Ensure the dropdown is positioned below */
     overflow-y: hidden;
     top: 100%; /* Position directly below the input */
@@ -59,7 +61,6 @@ select, input, button {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
-    padding: 10px 20px; /* Add padding for better spacing */
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -71,9 +72,10 @@ select, input, button {
 
 .toast-body {
     font-size: 1rem;
+    text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     form {
         width: 80%;
     }
