@@ -6,19 +6,13 @@ body {
     justify-content: center;
     height: 100vh;
 }
-html, body {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    position: fixed; /* Ensures the content remains fixed */
-    width: 100%; /* Ensures the body takes full width */
-}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 form {
